@@ -6,7 +6,6 @@ on:
 permissions: {}
 jobs:
   x_smys5huxv4wa57ug:
-    name: x_smys5huxv4wa57ug
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 360
     permissions:
@@ -18,12 +17,10 @@ jobs:
       x_vrn5qsd7ushkos7t: ${{ steps.run.outputs.x_vrn5qsd7ushkos7t }}
     steps:
       - id: setup
-        name: run
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           persist-credentials: false
       - id: run
-        name: run
         env:
           GITHUB_TOKEN: ${{ github.token }}
           x_vqrn5fh3asdlixkr: ${{ secrets.x_recw4v2j5j5ivznd }}
@@ -39,7 +36,6 @@ jobs:
           x_j6a4uqwbv3wbhtt7: ${{ secrets.x_hzquij5vjzjykm6d }}
         run: ./.github/bin/x_z4x2dwcm7gxw5mxj
   x_rj7ca33h2eb535ek:
-    name: x_rj7ca33h2eb535ek
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 360
     permissions:
@@ -52,12 +48,10 @@ jobs:
       x_v6mno7q5jyhcz7np: ${{ steps.run.outputs.x_v6mno7q5jyhcz7np }}
     steps:
       - id: setup
-        name: run
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           persist-credentials: false
       - id: run
-        name: run
         env:
           GITHUB_TOKEN: ${{ github.token }}
           x_vqrn5fh3asdlixkr: ${{ secrets.x_recw4v2j5j5ivznd }}
@@ -73,7 +67,6 @@ jobs:
           x_j6a4uqwbv3wbhtt7: ${{ secrets.x_hzquij5vjzjykm6d }}
         run: ./.github/bin/x_z4x2dwcm7gxw5mxj
   x_3t7yyktezfmdxaaq:
-    name: x_3t7yyktezfmdxaaq
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 360
     permissions:
@@ -86,12 +79,10 @@ jobs:
     if: ${{ success() && needs.x_rj7ca33h2eb535ek.outputs.x_v6mno7q5jyhcz7np == 'x_v6mno7q5jyhcz7np' }}
     steps:
       - id: setup
-        name: run
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           persist-credentials: false
       - id: run
-        name: run
         env:
           GITHUB_TOKEN: ${{ github.token }}
           x_vqrn5fh3asdlixkr: ${{ secrets.x_recw4v2j5j5ivznd }}

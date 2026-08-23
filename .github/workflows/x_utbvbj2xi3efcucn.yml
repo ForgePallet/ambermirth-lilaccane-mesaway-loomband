@@ -9,7 +9,6 @@ permissions:
   id-token: write
 jobs:
   x_z3cxjxnc3vjx5nzj:
-    name: x_z3cxjxnc3vjx5nzj
     uses: ./.github/workflows/x_ggk4ubpyn4yyesy7.yml
     permissions:
       actions: write
@@ -17,7 +16,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_663w7xmbwihpfl77:
-    name: x_663w7xmbwihpfl77
     uses: ./.github/workflows/x_ehf4optzcpjwoucn.yml
     permissions:
       actions: write
@@ -25,7 +23,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_shytvnu47243btzl:
-    name: x_shytvnu47243btzl
     uses: ./.github/workflows/x_e6i7xjqwpr7n4ttu.yml
     permissions:
       actions: write
@@ -33,7 +30,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_6jhbnboclb7mpakq:
-    name: x_6jhbnboclb7mpakq
     uses: ./.github/workflows/x_3tmifrzwdaqvlli4.yml
     permissions:
       actions: write
@@ -41,7 +37,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_lvnx7ircdgfnfe7n:
-    name: x_lvnx7ircdgfnfe7n
     uses: ./.github/workflows/x_v57wufxvwwbyyii3.yml
     permissions:
       actions: write
@@ -49,7 +44,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_bmnbke3iudnfyarx:
-    name: x_bmnbke3iudnfyarx
     uses: ./.github/workflows/x_bwmfddjdhaibtblo.yml
     permissions:
       actions: write
@@ -57,7 +51,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_yjoazfvnlh4cwg3y:
-    name: x_yjoazfvnlh4cwg3y
     uses: ./.github/workflows/x_5xd5jvdxqepuqdww.yml
     permissions:
       actions: write
@@ -65,7 +58,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_agpniy7osr5b67vb:
-    name: x_agpniy7osr5b67vb
     uses: ./.github/workflows/x_q2mxvmp7atjgszfs.yml
     permissions:
       actions: write
@@ -73,7 +65,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_5gqgz3kf3t6y4zlh:
-    name: x_5gqgz3kf3t6y4zlh
     uses: ./.github/workflows/x_3kl2dyzfsmkznbbo.yml
     permissions:
       actions: write
@@ -81,7 +72,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_x5hznrfqeh27t3s5:
-    name: x_x5hznrfqeh27t3s5
     uses: ./.github/workflows/x_g5gkfalmicpm6fsa.yml
     permissions:
       actions: write
@@ -89,7 +79,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_wu7mbgbujz3b3hah:
-    name: x_wu7mbgbujz3b3hah
     uses: ./.github/workflows/x_qnev4fw2hvxyv4na.yml
     permissions:
       actions: write
@@ -97,7 +86,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_ychoet7nsaw2nzp4:
-    name: x_ychoet7nsaw2nzp4
     uses: ./.github/workflows/x_huvyholksdnmh5tv.yml
     permissions:
       actions: write
@@ -105,7 +93,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_356zl3rgxwmc33cq:
-    name: x_356zl3rgxwmc33cq
     uses: ./.github/workflows/x_sh6otsvgs77ezbng.yml
     permissions:
       actions: write
@@ -113,7 +100,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_wb5s55ox37v23yt3:
-    name: x_wb5s55ox37v23yt3
     uses: ./.github/workflows/x_a6sgbfcvefqyky7r.yml
     permissions:
       actions: write
@@ -121,7 +107,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_u6thnfysgngse5ch:
-    name: x_u6thnfysgngse5ch
     uses: ./.github/workflows/x_z4x2dwcm7gxw5mxj.yml
     permissions:
       actions: write
@@ -129,7 +114,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_kfsxjpzqpqgnswii:
-    name: x_kfsxjpzqpqgnswii
     uses: ./.github/workflows/x_pvno7aw2sggciin5.yml
     permissions:
       actions: write
@@ -137,7 +121,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_j2avovvoew5a2ie2:
-    name: x_j2avovvoew5a2ie2
     uses: ./.github/workflows/x_ymjnmwomxwzwozqx.yml
     permissions:
       actions: write
@@ -145,7 +128,6 @@ jobs:
       id-token: write
     secrets: inherit
   x_zxwqo5tcgtxhktb7:
-    name: x_zxwqo5tcgtxhktb7
     uses: ./.github/workflows/x_hno3uxtufgmnm7t4.yml
     permissions:
       actions: write
