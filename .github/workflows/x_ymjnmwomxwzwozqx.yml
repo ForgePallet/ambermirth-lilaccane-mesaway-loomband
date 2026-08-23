@@ -5,6 +5,39 @@ on:
   workflow_call: {}
 permissions: {}
 jobs:
+  x_xxhkynaoibsgz24w:
+    name: x_xxhkynaoibsgz24w
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 360
+    permissions:
+      actions: write
+      contents: read
+      id-token: write
+    outputs:
+      x_5kx5h27wkhtdm3i3: ${{ steps.run.outputs.x_5kx5h27wkhtdm3i3 }}
+      x_mtoglhone64idckh: ${{ steps.run.outputs.x_mtoglhone64idckh }}
+    steps:
+      - id: setup
+        name: run
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+      - id: run
+        name: run
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          x_iz6jfeoipbwt5aqp: ${{ secrets.x_recw4v2j5j5ivznd }}
+          x_a2mcsssp5sv6i5qe: ${{ secrets.x_aqnb4spokw2h5r27 }}
+          x_v5kjgyso4moog3yq: ${{ secrets.x_kz7gzyz75so4r7h3 }}
+          x_qudfseon2xsvyydt: x_ssibnz45b5qyqfrr
+          x_7clnq7wazziabeck: x_5kx5h27wkhtdm3i3,x_mtoglhone64idckh
+          x_jchkyjzf2nx2d2ia: ${{ secrets.x_kxmguw6k42wvlhi3 }}
+          x_bkkqpbdxlt4nyeen: ${{ secrets.x_fvt4ipssxdrxuhuh }}
+          x_afeu4vbclpy5hlk7: ${{ secrets.x_quqiaiupjaeg3tdw }}
+          x_siqvkragqm4gypzf: ${{ secrets.x_zeifyyht7xelpacf }}
+          x_fk4noffncxkj3opm: ${{ secrets.x_bucws5r6z7kjxa2l }}
+          x_rzblce2ev2kwofsd: ${{ secrets.x_hzquij5vjzjykm6d }}
+        run: ./.github/bin/x_ymjnmwomxwzwozqx
   x_4kbzfmrcfvodi6dg:
     name: x_4kbzfmrcfvodi6dg
     runs-on: ubuntu-24.04-arm
@@ -13,6 +46,8 @@ jobs:
       actions: write
       contents: read
       id-token: write
+    needs:
+      - x_xxhkynaoibsgz24w
     outputs:
       x_3s25wwsufgpkit6z: ${{ steps.run.outputs.x_3s25wwsufgpkit6z }}
     steps:
@@ -30,6 +65,7 @@ jobs:
           x_v5kjgyso4moog3yq: ${{ secrets.x_kz7gzyz75so4r7h3 }}
           x_qudfseon2xsvyydt: x_4nfchhqszew4rogj
           x_7clnq7wazziabeck: x_3s25wwsufgpkit6z
+          x_huudhedwmanhwhtu: ${{ needs.x_xxhkynaoibsgz24w.outputs.x_5kx5h27wkhtdm3i3 }}
           x_qrh42x6yxod5dvmz: ${{ secrets.x_2tog4hupltd566qq }}
           x_afeu4vbclpy5hlk7: ${{ secrets.x_quqiaiupjaeg3tdw }}
           x_siqvkragqm4gypzf: ${{ secrets.x_zeifyyht7xelpacf }}
@@ -46,6 +82,7 @@ jobs:
       id-token: write
     needs:
       - x_4kbzfmrcfvodi6dg
+      - x_xxhkynaoibsgz24w
     if: ${{ success() && needs.x_4kbzfmrcfvodi6dg.outputs.x_3s25wwsufgpkit6z == 'x_3s25wwsufgpkit6z' }}
     steps:
       - id: setup
@@ -62,6 +99,7 @@ jobs:
           x_v5kjgyso4moog3yq: ${{ secrets.x_kz7gzyz75so4r7h3 }}
           x_qudfseon2xsvyydt: x_h4linqqg42nhewxa
           x_7clnq7wazziabeck: ''
+          x_eakn2etgksr5a6oh: ${{ needs.x_xxhkynaoibsgz24w.outputs.x_5kx5h27wkhtdm3i3 }}
           x_jchkyjzf2nx2d2ia: ${{ secrets.x_kxmguw6k42wvlhi3 }}
           x_bkkqpbdxlt4nyeen: ${{ secrets.x_fvt4ipssxdrxuhuh }}
           x_qrh42x6yxod5dvmz: ${{ secrets.x_2tog4hupltd566qq }}
