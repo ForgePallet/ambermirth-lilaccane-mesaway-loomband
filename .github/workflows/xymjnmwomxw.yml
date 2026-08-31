@@ -1,0 +1,128 @@
+# generated
+name: xymjnmwomxw
+on:
+  workflow_dispatch: {}
+  workflow_call:
+    secrets:
+      x2tog4huplt:
+        required: true
+      x62mffq6fec:
+        required: true
+      xaqnb4spokw:
+        required: true
+      xbucws5r6z7:
+        required: true
+      xfvt4ipssxd:
+        required: true
+      xhnuatecbvz:
+        required: true
+      xhzquij5vjz:
+        required: true
+      xkxmguw6k42:
+        required: true
+      xkz7gzyz75s:
+        required: true
+      xquqiaiupja:
+        required: true
+      xrecw4v2j5j:
+        required: true
+      xwfcb4ka6lh:
+        required: true
+      xzeifyyht7x:
+        required: true
+permissions: {}
+jobs:
+  xxxhkynaoib:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      x5kx5h27wkh: ${{ steps.run.outputs.x5kx5h27wkh }}
+      xmtoglhone6: ${{ steps.run.outputs.xmtoglhone6 }}
+    steps:
+      - id: setup
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+      - id: run
+        env:
+          xiz6jfeoipb: ${{ secrets.xrecw4v2j5j }}
+          xa2mcsssp5s: ${{ secrets.xaqnb4spokw }}
+          xv5kjgyso4m: ${{ secrets.xkz7gzyz75s }}
+          xqudfseon2x: xssibnz45b5
+          x7clnq7wazz: x5kx5h27wkh,xmtoglhone6
+          xjchkyjzf2n: ${{ secrets.xkxmguw6k42 }}
+          xbkkqpbdxlt: ${{ secrets.xfvt4ipssxd }}
+          xafeu4vbclp: ${{ secrets.xquqiaiupja }}
+          xsiqvkragqm: ${{ secrets.xzeifyyht7x }}
+          xfk4noffncx: ${{ secrets.xbucws5r6z7 }}
+          xrzblce2ev2: ${{ secrets.xhzquij5vjz }}
+        run: ./.github/bin/xymjnmwomxw
+  x4kbzfmrcfv:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      id-token: write
+    needs:
+      - xxxhkynaoib
+    outputs:
+      x3s25wwsufg: ${{ steps.run.outputs.x3s25wwsufg }}
+    steps:
+      - id: setup
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+      - id: run
+        env:
+          xiz6jfeoipb: ${{ secrets.xrecw4v2j5j }}
+          xa2mcsssp5s: ${{ secrets.xaqnb4spokw }}
+          xv5kjgyso4m: ${{ secrets.xkz7gzyz75s }}
+          xqudfseon2x: x4nfchhqsze
+          x7clnq7wazz: x3s25wwsufg
+          xhuudhedwma: ${{ needs.xxxhkynaoib.outputs.x5kx5h27wkh }}
+          xqrh42x6yxo: ${{ secrets.x2tog4huplt }}
+          xafeu4vbclp: ${{ secrets.xquqiaiupja }}
+          xsiqvkragqm: ${{ secrets.xzeifyyht7x }}
+          xfk4noffncx: ${{ secrets.xbucws5r6z7 }}
+          xrzblce2ev2: ${{ secrets.xhzquij5vjz }}
+        run: ./.github/bin/xymjnmwomxw
+  xy7uilivp4l:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      id-token: write
+    needs:
+      - x4kbzfmrcfv
+      - xxxhkynaoib
+    if: ${{ success() && needs.x4kbzfmrcfv.outputs.x3s25wwsufg == 'x3s25wwsufg' }}
+    steps:
+      - id: setup
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+      - id: run
+        env:
+          xiz6jfeoipb: ${{ secrets.xrecw4v2j5j }}
+          xa2mcsssp5s: ${{ secrets.xaqnb4spokw }}
+          xv5kjgyso4m: ${{ secrets.xkz7gzyz75s }}
+          xqudfseon2x: xh4linqqg42
+          x7clnq7wazz: ''
+          xeakn2etgks: ${{ needs.xxxhkynaoib.outputs.x5kx5h27wkh }}
+          xjchkyjzf2n: ${{ secrets.xkxmguw6k42 }}
+          xbkkqpbdxlt: ${{ secrets.xfvt4ipssxd }}
+          xqrh42x6yxo: ${{ secrets.x2tog4huplt }}
+          xafeu4vbclp: ${{ secrets.xquqiaiupja }}
+          xsiqvkragqm: ${{ secrets.xzeifyyht7x }}
+          xfk4noffncx: ${{ secrets.xbucws5r6z7 }}
+          xrzblce2ev2: ${{ secrets.xhzquij5vjz }}
+          xjinldkgk5n: ${{ secrets.x62mffq6fec }}
+          x5a5phtrg6l: ${{ secrets.xhnuatecbvz }}
+          xbya6osfldj: ${{ secrets.xwfcb4ka6lh }}
+        run: ./.github/bin/xymjnmwomxw
+concurrency:
+  group: xymjnmwomxw
+  cancel-in-progress: false
