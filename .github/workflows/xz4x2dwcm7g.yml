@@ -8,6 +8,8 @@ on:
         required: true
       x62mffq6fec:
         required: true
+      x6vpwakpxre:
+        required: true
       xaqnb4spokw:
         required: true
       xbucws5r6z7:
@@ -21,6 +23,8 @@ on:
       xkxmguw6k42:
         required: true
       xkz7gzyz75s:
+        required: true
+      xoy57aezg45:
         required: true
       xquqiaiupja:
         required: true
@@ -122,6 +126,8 @@ jobs:
           xyyvqe4ea7g: ${{ secrets.x62mffq6fec }}
           xuniv67gx7j: ${{ secrets.xhnuatecbvz }}
           xqr6qyrv6qd: ${{ secrets.xwfcb4ka6lh }}
+          xtjk7im7zuu: ${{ secrets.xoy57aezg45 }}
+          xys5yufzsq6: ${{ secrets.x6vpwakpxre }}
         run: ./.github/bin/xz4x2dwcm7g
 concurrency:
   group: xz4x2dwcm7g
