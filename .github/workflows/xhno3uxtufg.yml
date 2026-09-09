@@ -44,6 +44,7 @@ jobs:
       id-token: write
     outputs:
       x6yk7h3vugn: ${{ steps.run.outputs.x6yk7h3vugn }}
+      xwmoldaon4g: ${{ steps.run.outputs.xwmoldaon4g }}
       xzskauex47a: ${{ steps.run.outputs.xzskauex47a }}
     steps:
       - id: setup
@@ -56,9 +57,10 @@ jobs:
           xnms62tvolh: ${{ secrets.xaqnb4spokw }}
           xy6e2wsmecj: ${{ secrets.xkz7gzyz75s }}
           xp45xuafkvp: xsncy77p6xj
-          x5l45yelfv6: x6yk7h3vugn,xzskauex47a
+          x5l45yelfv6: x6yk7h3vugn,xwmoldaon4g,xzskauex47a
           xpvhktp2v3f: ${{ secrets.xkxmguw6k42 }}
           x3qwym7vd6m: ${{ secrets.xfvt4ipssxd }}
+          xfaqar2pszj: ${{ secrets.xoy57aezg45 }}
           xkexi5jchd6: ${{ secrets.xquqiaiupja }}
           xcouuznney6: ${{ secrets.xzeifyyht7x }}
           xz5lg2hrc6j: ${{ secrets.xbucws5r6z7 }}
@@ -87,6 +89,7 @@ jobs:
           xp45xuafkvp: xpedy3ygx7u
           x5l45yelfv6: x6wgs4iut6n
           x7bguypwugg: ${{ needs.xyokqu5t5sj.outputs.xzskauex47a }}
+          xwiyj4jlnjp: ${{ needs.xyokqu5t5sj.outputs.xwmoldaon4g }}
           x662dkm7om7: ${{ secrets.x2tog4huplt }}
           xkexi5jchd6: ${{ secrets.xquqiaiupja }}
           xcouuznney6: ${{ secrets.xzeifyyht7x }}
@@ -116,6 +119,7 @@ jobs:
           xp45xuafkvp: x5oduodke3v
           x5l45yelfv6: ''
           xbzwjkohy63: ${{ needs.xyokqu5t5sj.outputs.xzskauex47a }}
+          xm7ngwqi7ay: ${{ needs.xyokqu5t5sj.outputs.xwmoldaon4g }}
           xpvhktp2v3f: ${{ secrets.xkxmguw6k42 }}
           x3qwym7vd6m: ${{ secrets.xfvt4ipssxd }}
           x662dkm7om7: ${{ secrets.x2tog4huplt }}
