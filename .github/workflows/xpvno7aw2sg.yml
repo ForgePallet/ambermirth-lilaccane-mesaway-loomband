@@ -45,6 +45,7 @@ jobs:
     outputs:
       x2zhscanuks: ${{ steps.run.outputs.x2zhscanuks }}
       xmkqhpfjb2e: ${{ steps.run.outputs.xmkqhpfjb2e }}
+      xsi7xhafn3d: ${{ steps.run.outputs.xsi7xhafn3d }}
       xy2orxwd33m: ${{ steps.run.outputs.xy2orxwd33m }}
     steps:
       - id: setup
@@ -57,7 +58,7 @@ jobs:
           xz3kyjndzg2: ${{ secrets.xaqnb4spokw }}
           xtw2vsvstbb: ${{ secrets.xkz7gzyz75s }}
           xdd2epeob27: x3otbmjp5eu
-          x4wdcly6w7d: x2zhscanuks,xmkqhpfjb2e,xy2orxwd33m
+          x4wdcly6w7d: x2zhscanuks,xmkqhpfjb2e,xsi7xhafn3d,xy2orxwd33m
           xovw5q4in7z: ${{ secrets.xkxmguw6k42 }}
           xdnbtbgiygl: ${{ secrets.xfvt4ipssxd }}
           xpkzrkce2cj: ${{ secrets.xoy57aezg45 }}

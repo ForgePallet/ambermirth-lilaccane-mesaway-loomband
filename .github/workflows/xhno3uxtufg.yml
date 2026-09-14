@@ -44,6 +44,7 @@ jobs:
       id-token: write
     outputs:
       x6yk7h3vugn: ${{ steps.run.outputs.x6yk7h3vugn }}
+      xsffkrrkjij: ${{ steps.run.outputs.xsffkrrkjij }}
       xwmoldaon4g: ${{ steps.run.outputs.xwmoldaon4g }}
       xzskauex47a: ${{ steps.run.outputs.xzskauex47a }}
     steps:
@@ -57,7 +58,7 @@ jobs:
           xnms62tvolh: ${{ secrets.xaqnb4spokw }}
           xy6e2wsmecj: ${{ secrets.xkz7gzyz75s }}
           xp45xuafkvp: xsncy77p6xj
-          x5l45yelfv6: x6yk7h3vugn,xwmoldaon4g,xzskauex47a
+          x5l45yelfv6: x6yk7h3vugn,xsffkrrkjij,xwmoldaon4g,xzskauex47a
           xpvhktp2v3f: ${{ secrets.xkxmguw6k42 }}
           x3qwym7vd6m: ${{ secrets.xfvt4ipssxd }}
           xfaqar2pszj: ${{ secrets.xoy57aezg45 }}
