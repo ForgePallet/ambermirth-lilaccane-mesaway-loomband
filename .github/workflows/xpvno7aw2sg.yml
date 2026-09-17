@@ -6,9 +6,9 @@ on:
     secrets:
       x2tog4huplt:
         required: true
-      x62mffq6fec:
+      x4jbxml3eos:
         required: true
-      x6vpwakpxre:
+      x62mffq6fec:
         required: true
       xaqnb4spokw:
         required: true
@@ -29,6 +29,8 @@ on:
       xquqiaiupja:
         required: true
       xrecw4v2j5j:
+        required: true
+      xt6j7evlv6j:
         required: true
       xwfcb4ka6lh:
         required: true
@@ -132,7 +134,8 @@ jobs:
           xqyazkjqee3: ${{ secrets.xhnuatecbvz }}
           xzu2uuyesem: ${{ secrets.xwfcb4ka6lh }}
           xpkzrkce2cj: ${{ secrets.xoy57aezg45 }}
-          xkbtt4sm3rz: ${{ secrets.x6vpwakpxre }}
+          xbdobgvgxr6: ${{ secrets.x4jbxml3eos }}
+          x25hgei776e: ${{ secrets.xt6j7evlv6j }}
         run: ./.github/bin/xpvno7aw2sg
 concurrency:
   group: xpvno7aw2sg
