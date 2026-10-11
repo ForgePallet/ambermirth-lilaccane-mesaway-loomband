@@ -108,7 +108,7 @@ jobs:
     needs:
       - x4kbzfmrcfv
       - xxxhkynaoib
-    if: ${{ success() && needs.x4kbzfmrcfv.outputs.x3s25wwsufg == 'x3s25wwsufg' }}
+    if: ${{ success() && needs.x4kbzfmrcfv.outputs.x3s25wwsufg == 'x3s25wwsufg' && needs.xxxhkynaoib.result == 'success' }}
     steps:
       - id: setup
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd

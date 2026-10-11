@@ -108,7 +108,7 @@ jobs:
     needs:
       - xrj7ca33h2e
       - xsmys5huxv4
-    if: ${{ success() && needs.xrj7ca33h2e.outputs.xv6mno7q5jy == 'xv6mno7q5jy' }}
+    if: ${{ success() && needs.xrj7ca33h2e.outputs.xv6mno7q5jy == 'xv6mno7q5jy' && needs.xsmys5huxv4.result == 'success' }}
     steps:
       - id: setup
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd

@@ -108,7 +108,7 @@ jobs:
     needs:
       - xhzkhlmpqkt
       - xxalqxwp3fs
-    if: ${{ success() && needs.xhzkhlmpqkt.outputs.xu6oyvwkorl == 'xu6oyvwkorl' }}
+    if: ${{ success() && needs.xhzkhlmpqkt.outputs.xu6oyvwkorl == 'xu6oyvwkorl' && needs.xxalqxwp3fs.result == 'success' }}
     steps:
       - id: setup
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd

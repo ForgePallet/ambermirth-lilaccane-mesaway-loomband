@@ -108,7 +108,7 @@ jobs:
     needs:
       - xfhim7ytvlq
       - x5326ql64tg
-    if: ${{ success() && needs.xfhim7ytvlq.outputs.xo4b44nwxcd == 'xo4b44nwxcd' }}
+    if: ${{ success() && needs.xfhim7ytvlq.outputs.xo4b44nwxcd == 'xo4b44nwxcd' && needs.x5326ql64tg.result == 'success' }}
     steps:
       - id: setup
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
