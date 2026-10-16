@@ -41,7 +41,7 @@ jobs:
   xzkodkic73y:
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
-    permissions:
+    permissions: &xzkodkic73y
       contents: read
       id-token: write
     outputs:
@@ -50,13 +50,14 @@ jobs:
       xfgsx2jzols: ${{ steps.run.outputs.xfgsx2jzols }}
       xzl2r76ovq7: ${{ steps.run.outputs.xzl2r76ovq7 }}
     steps:
-      - id: setup
+      - &xhhqg6pscet
+        id: setup
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           persist-credentials: false
       - id: run
         env:
-          xft355rjg6j: ${{ secrets.xrecw4v2j5j }}
+          xft355rjg6j: &xabvj5s7opj ${{ secrets.xrecw4v2j5j }}
           xm2hhkxc7wj: ${{ secrets.xaqnb4spokw }}
           xq6e47c2i7n: ${{ secrets.xkz7gzyz75s }}
           xosm43lmjxe: x5kumui2ylu
@@ -72,21 +73,16 @@ jobs:
   xhhqg6pscet:
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xzkodkic73y
     needs:
       - xzkodkic73y
     outputs:
       xzgzbxi2zix: ${{ steps.run.outputs.xzgzbxi2zix }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xhhqg6pscet
       - id: run
         env:
-          xft355rjg6j: ${{ secrets.xrecw4v2j5j }}
+          xft355rjg6j: *xabvj5s7opj
           xm2hhkxc7wj: ${{ secrets.xaqnb4spokw }}
           xq6e47c2i7n: ${{ secrets.xkz7gzyz75s }}
           xosm43lmjxe: x3kf4llvqpp
@@ -102,21 +98,16 @@ jobs:
   xabvj5s7opj:
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xzkodkic73y
     needs:
       - xhhqg6pscet
       - xzkodkic73y
     if: ${{ success() && needs.xhhqg6pscet.outputs.xzgzbxi2zix == 'xzgzbxi2zix' && needs.xzkodkic73y.result == 'success' }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xhhqg6pscet
       - id: run
         env:
-          xft355rjg6j: ${{ secrets.xrecw4v2j5j }}
+          xft355rjg6j: *xabvj5s7opj
           xm2hhkxc7wj: ${{ secrets.xaqnb4spokw }}
           xq6e47c2i7n: ${{ secrets.xkz7gzyz75s }}
           xosm43lmjxe: x5cgjmdev7b

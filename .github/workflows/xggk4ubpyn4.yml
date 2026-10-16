@@ -41,7 +41,7 @@ jobs:
   xesdndyquma:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
+    permissions: &xesdndyquma
       contents: read
       id-token: write
     outputs:
@@ -50,61 +50,55 @@ jobs:
       xfyi6ok6ok5: ${{ steps.run.outputs.xfyi6ok6ok5 }}
       xzbi43ctoae: ${{ steps.run.outputs.xzbi43ctoae }}
     steps:
-      - id: setup
+      - &xqnnnql23op
+        id: setup
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           persist-credentials: false
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: &x6jrxhzmb4k ${{ secrets.xrecw4v2j5j }}
+          xxqh4k2ksyf: &xryj3o3djsx ${{ secrets.xaqnb4spokw }}
+          x636j2ebzmk: &xs4hspd4kbz ${{ secrets.xkz7gzyz75s }}
           xqtabayyswc: xcmyffudap5
           xmhwxy6kdom: x5hbrdo66v6,xavhmuioz7n,xfyi6ok6ok5,xzbi43ctoae
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: &xjrxxjdt6gv ${{ secrets.xkxmguw6k42 }}
+          xyaqnp3pwdm: &xk5jcghl3o4 ${{ secrets.xfvt4ipssxd }}
+          xvirq6aphoa: &xmbcbvfqjv5 ${{ secrets.xoy57aezg45 }}
+          x7cudfzz57c: &xw4msalzvwz ${{ secrets.xquqiaiupja }}
+          xeejwaz7qsa: &xwia2jmtp6o ${{ secrets.xzeifyyht7x }}
+          xwloozxbaoy: &x3xa2vj3psg ${{ secrets.xbucws5r6z7 }}
+          x5qojdo4snv: &xy6fnykkmst ${{ secrets.xhzquij5vjz }}
+        run: &xexaee6lcto ./.github/bin/xggk4ubpyn4
   xqnnnql23op:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
     outputs:
       xu3hwi6r6eq: ${{ steps.run.outputs.xu3hwi6r6eq }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xs2czhrwbzt
           xmhwxy6kdom: xu3hwi6r6eq
           x7asoaz27ro: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xqg3axetw4m: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-        run: ./.github/bin/xggk4ubpyn4
+          x7g65bwwdgw: &x2vq4s2yas3 ${{ secrets.x2tog4huplt }}
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+        run: *xexaee6lcto
   x6jrxhzmb4k:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xqnnnql23op
       - xesdndyquma
@@ -112,39 +106,34 @@ jobs:
     outputs:
       xnv7lsm3vph: ${{ steps.run.outputs.xnv7lsm3vph }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x55fioa5r6h
           xmhwxy6kdom: xnv7lsm3vph
           xhfnwto2n5j: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xoybtozfieh: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: &xv6wban2hnn ${{ secrets.x62mffq6fec }}
+          x67pastxirf: &xfxe6oorw6t ${{ secrets.xhnuatecbvz }}
+          xb4wnxdpabo: &xzvgdrzhngz ${{ secrets.xwfcb4ka6lh }}
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: &x2othynp5ex ${{ secrets.x4jbxml3eos }}
+          xckvkkemwcp: &xjimj5ffjtd ${{ secrets.xt6j7evlv6j }}
+        run: *xexaee6lcto
   xryj3o3djsx:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - x6jrxhzmb4k
@@ -152,39 +141,34 @@ jobs:
     outputs:
       xcpgopsckjf: ${{ steps.run.outputs.xcpgopsckjf }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xwj5scvztcg
           xmhwxy6kdom: xcpgopsckjf
           xlslnsvjmcb: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xqlzqphyh2q: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xs4hspd4kbz:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xryj3o3djsx
@@ -192,39 +176,34 @@ jobs:
     outputs:
       xfiibvmzk3x: ${{ steps.run.outputs.xfiibvmzk3x }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xvdasoo4maq
           xmhwxy6kdom: xfiibvmzk3x
           xjpvf6hu2rc: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xpntztg6uds: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xjrxxjdt6gv:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xs4hspd4kbz
@@ -232,39 +211,34 @@ jobs:
     outputs:
       xuyqey2wmxk: ${{ steps.run.outputs.xuyqey2wmxk }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xiwb6qgdsmg
           xmhwxy6kdom: xuyqey2wmxk
           xovh2rxc4pf: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xxc5mbsptny: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xk5jcghl3o4:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xjrxxjdt6gv
@@ -272,39 +246,34 @@ jobs:
     outputs:
       x7rduvhbysn: ${{ steps.run.outputs.x7rduvhbysn }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xvjk3kro3av
           xmhwxy6kdom: x7rduvhbysn
           xsk6si5enfd: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xysnz4aqtt3: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xmbcbvfqjv5:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xk5jcghl3o4
@@ -312,39 +281,34 @@ jobs:
     outputs:
       xddjv6piyop: ${{ steps.run.outputs.xddjv6piyop }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x6ukftwcbxb
           xmhwxy6kdom: xddjv6piyop
           x6iq3zfbwvv: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xganin7fuuw: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xw4msalzvwz:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xmbcbvfqjv5
@@ -352,39 +316,34 @@ jobs:
     outputs:
       xvfmz6lyyw2: ${{ steps.run.outputs.xvfmz6lyyw2 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xtnrfevrv5v
           xmhwxy6kdom: xvfmz6lyyw2
           x7coenvgg4e: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xu2owy34d3p: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xwia2jmtp6o:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xw4msalzvwz
@@ -392,39 +351,34 @@ jobs:
     outputs:
       xkbdjjj6txm: ${{ steps.run.outputs.xkbdjjj6txm }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xsmea7knt4p
           xmhwxy6kdom: xkbdjjj6txm
           xhbkms5dugz: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xpsg5e3iuaw: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   x3xa2vj3psg:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xwia2jmtp6o
@@ -432,39 +386,34 @@ jobs:
     outputs:
       xldqn6mbyc6: ${{ steps.run.outputs.xldqn6mbyc6 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x7xcjtd5i6i
           xmhwxy6kdom: xldqn6mbyc6
           xjukntnjdcz: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xzva7byflm6: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xy6fnykkmst:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - x3xa2vj3psg
@@ -472,39 +421,34 @@ jobs:
     outputs:
       xmelsq6a6nf: ${{ steps.run.outputs.xmelsq6a6nf }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xsgfkvm6k6w
           xmhwxy6kdom: xmelsq6a6nf
           xcog5jvp4s5: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xepwnblcdgp: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xexaee6lcto:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xy6fnykkmst
@@ -512,39 +456,34 @@ jobs:
     outputs:
       xyha72gyytd: ${{ steps.run.outputs.xyha72gyytd }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xsgxszifb5h
           xmhwxy6kdom: xyha72gyytd
           x3d4cmwql7r: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xis4uvyu5n7: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   x2vq4s2yas3:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xexaee6lcto
@@ -552,39 +491,34 @@ jobs:
     outputs:
       x6kuqwhmgzl: ${{ steps.run.outputs.x6kuqwhmgzl }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xwwg7mgdehk
           xmhwxy6kdom: x6kuqwhmgzl
           xgcwxsyofoq: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xsoq4jdjhjy: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xrpsugnq3ec:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - x2vq4s2yas3
@@ -592,39 +526,34 @@ jobs:
     outputs:
       xuyrqnbd4hm: ${{ steps.run.outputs.xuyrqnbd4hm }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xjte5frppds
           xmhwxy6kdom: xuyrqnbd4hm
           xdduikyv7vx: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xiojfzefifh: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xv6wban2hnn:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xrpsugnq3ec
@@ -632,39 +561,34 @@ jobs:
     outputs:
       xxoecmz67q4: ${{ steps.run.outputs.xxoecmz67q4 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xjr4zb4nswe
           xmhwxy6kdom: xxoecmz67q4
           xivjcwns3oz: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xwbx3dpjqfe: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xfxe6oorw6t:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xv6wban2hnn
@@ -672,39 +596,34 @@ jobs:
     outputs:
       xlsh7if7oxb: ${{ steps.run.outputs.xlsh7if7oxb }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xrsh7vp6f2h
           xmhwxy6kdom: xlsh7if7oxb
           xem65l7b6um: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xuvokvsx7kf: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xzvgdrzhngz:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xfxe6oorw6t
@@ -712,39 +631,34 @@ jobs:
     outputs:
       xxc45fzy7y7: ${{ steps.run.outputs.xxc45fzy7y7 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xcvyei6x5ii
           xmhwxy6kdom: xxc45fzy7y7
           xerw2576oqm: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xpszqiggp2s: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   x2othynp5ex:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xzvgdrzhngz
@@ -752,39 +666,34 @@ jobs:
     outputs:
       xmwlvnxwesp: ${{ steps.run.outputs.xmwlvnxwesp }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xns5jrracy7
           xmhwxy6kdom: xmwlvnxwesp
           xbt2cwehjic: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xeizacsdcxj: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xjimj5ffjtd:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - x2othynp5ex
@@ -792,39 +701,34 @@ jobs:
     outputs:
       xtwhxva2ll3: ${{ steps.run.outputs.xtwhxva2ll3 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xdwd7fdqq5h
           xmhwxy6kdom: xtwhxva2ll3
           xleuwg3f6if: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xzn54fb4zlg: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xeela5wqyg7:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xjimj5ffjtd
@@ -832,39 +736,34 @@ jobs:
     outputs:
       xqlt5nmbcq5: ${{ steps.run.outputs.xqlt5nmbcq5 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xmtvkxbs3f6
           xmhwxy6kdom: xqlt5nmbcq5
           xf7zuzfehdx: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xotlvid6zkw: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xjgiteqk3nm:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xeela5wqyg7
@@ -872,39 +771,34 @@ jobs:
     outputs:
       x7cqga3ys73: ${{ steps.run.outputs.x7cqga3ys73 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xyingrl6dz2
           xmhwxy6kdom: x7cqga3ys73
           xwaxzv5dirj: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xxjurptw4vx: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xuehdhdr2bl:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xjgiteqk3nm
@@ -912,39 +806,34 @@ jobs:
     outputs:
       xjsokb7zkfv: ${{ steps.run.outputs.xjsokb7zkfv }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xk4ngqzrhpm
           xmhwxy6kdom: xjsokb7zkfv
           xoeupwx645l: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xrjp77wcuiu: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xbgzcvjxhvi:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xuehdhdr2bl
@@ -952,39 +841,34 @@ jobs:
     outputs:
       xz67vctfsvb: ${{ steps.run.outputs.xz67vctfsvb }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xzqvbzdq4cp
           xmhwxy6kdom: xz67vctfsvb
           xcrf2qkzvle: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xwkcntkjik5: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xfflroyyybg:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xbgzcvjxhvi
@@ -992,39 +876,34 @@ jobs:
     outputs:
       xme64oil2ko: ${{ steps.run.outputs.xme64oil2ko }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xykb6j4vp6m
           xmhwxy6kdom: xme64oil2ko
           x5bzc37r73k: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           x5gg5u7l6rz: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xwhvs37y65l:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xfflroyyybg
@@ -1032,39 +911,34 @@ jobs:
     outputs:
       xluyljbu3ts: ${{ steps.run.outputs.xluyljbu3ts }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xaqigkxcgjd
           xmhwxy6kdom: xluyljbu3ts
           x5wooqs5f6p: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xu6csrymztp: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   x5533qnczzc:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xwhvs37y65l
@@ -1072,39 +946,34 @@ jobs:
     outputs:
       xap5yl6hcdw: ${{ steps.run.outputs.xap5yl6hcdw }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x6r55yhgksp
           xmhwxy6kdom: xap5yl6hcdw
           xgtbhztanxp: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xjxwzhg222f: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xl6tfgigzxq:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - x5533qnczzc
@@ -1112,39 +981,34 @@ jobs:
     outputs:
       x757skthu7n: ${{ steps.run.outputs.x757skthu7n }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x3as5bxl24g
           xmhwxy6kdom: x757skthu7n
           xjgyzy634z6: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xoe4lgqv57a: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xrl4awrdnjt:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xl6tfgigzxq
@@ -1152,39 +1016,34 @@ jobs:
     outputs:
       xmwelbmsasf: ${{ steps.run.outputs.xmwelbmsasf }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xw5umn4yvfu
           xmhwxy6kdom: xmwelbmsasf
           x5pynowssht: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xspfkefc2zw: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xavpsj6vujk:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xrl4awrdnjt
@@ -1192,39 +1051,34 @@ jobs:
     outputs:
       xneuepzduh6: ${{ steps.run.outputs.xneuepzduh6 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x4ktb3xcosk
           xmhwxy6kdom: xneuepzduh6
           xqyqqzayxps: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xyzhz755wry: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xi2x5rfmj5f:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xavpsj6vujk
@@ -1232,39 +1086,34 @@ jobs:
     outputs:
       x7c2gstkn3n: ${{ steps.run.outputs.x7c2gstkn3n }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x2dyppgzzy7
           xmhwxy6kdom: x7c2gstkn3n
           x72hie3nofu: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xa24xp4dzrp: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xcn2rxoyws2:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xi2x5rfmj5f
@@ -1272,39 +1121,34 @@ jobs:
     outputs:
       xl3mfsqxv4u: ${{ steps.run.outputs.xl3mfsqxv4u }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xonrdv4k7bi
           xmhwxy6kdom: xl3mfsqxv4u
           xjr7twko3nz: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xltmu35rggc: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xo75llp2izp:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xcn2rxoyws2
@@ -1312,39 +1156,34 @@ jobs:
     outputs:
       xrjyhgaihp6: ${{ steps.run.outputs.xrjyhgaihp6 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x5q4hgqu6pz
           xmhwxy6kdom: xrjyhgaihp6
           x23rolk2rtb: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xm4gnzxt27g: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xgjwbppnnio:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xo75llp2izp
@@ -1352,39 +1191,34 @@ jobs:
     outputs:
       x4llh3uisbh: ${{ steps.run.outputs.x4llh3uisbh }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xw2ubvj63ki
           xmhwxy6kdom: x4llh3uisbh
           xhxwt4ws4id: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xj3ecemxz23: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   x2i3omxcej4:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xgjwbppnnio
@@ -1392,39 +1226,34 @@ jobs:
     outputs:
       xxuam6l6pi6: ${{ steps.run.outputs.xxuam6l6pi6 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xdjl7ami5cv
           xmhwxy6kdom: xxuam6l6pi6
           x2h4ptsrnh5: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xsmvkorujup: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xiya7cxfeym:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - x2i3omxcej4
@@ -1432,39 +1261,34 @@ jobs:
     outputs:
       xfwniybu2wz: ${{ steps.run.outputs.xfwniybu2wz }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xlyedfrjynu
           xmhwxy6kdom: xfwniybu2wz
           x5y7wibd3bs: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xjabx4d2gs2: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xgq5gkgrm4q:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xiya7cxfeym
@@ -1472,39 +1296,34 @@ jobs:
     outputs:
       xymzt2lygzr: ${{ steps.run.outputs.xymzt2lygzr }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xstukyp6vrk
           xmhwxy6kdom: xymzt2lygzr
           xxipyegafk6: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xxth4nakedj: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xkpyfkfpzma:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xgq5gkgrm4q
@@ -1512,39 +1331,34 @@ jobs:
     outputs:
       x6o4xuiduov: ${{ steps.run.outputs.x6o4xuiduov }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xr3c2ubocoj
           xmhwxy6kdom: x6o4xuiduov
           xcjwzupdzh6: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xtmctvayhwj: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xgfcgjoyvmh:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xkpyfkfpzma
@@ -1552,39 +1366,34 @@ jobs:
     outputs:
       xerdqqo2x36: ${{ steps.run.outputs.xerdqqo2x36 }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: x5rwymmg3ph
           xmhwxy6kdom: xerdqqo2x36
           xpo6p7lyz6t: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xvhvhb7wxtr: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xm44iuo6jjm:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xgfcgjoyvmh
@@ -1592,39 +1401,34 @@ jobs:
     outputs:
       xpp5qicracn: ${{ steps.run.outputs.xpp5qicracn }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xj5kldcwx24
           xmhwxy6kdom: xpp5qicracn
           xco5wulamen: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xf5uoltxts7: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xwtbu4tjwhq:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xm44iuo6jjm
@@ -1632,39 +1436,34 @@ jobs:
     outputs:
       xcaqc7etbyq: ${{ steps.run.outputs.xcaqc7etbyq }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xinvp2rtlgk
           xmhwxy6kdom: xcaqc7etbyq
           xmbjwltwqkf: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xr3d57frlag: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xc5orv7z4to:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xwtbu4tjwhq
@@ -1672,39 +1471,34 @@ jobs:
     outputs:
       xyk2k7ow2wj: ${{ steps.run.outputs.xyk2k7ow2wj }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xlnaksjlj2u
           xmhwxy6kdom: xyk2k7ow2wj
           xnxbcdltr74: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xzjbtwcsgxw: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xgwrpjedh4f:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xc5orv7z4to
@@ -1712,39 +1506,34 @@ jobs:
     outputs:
       xbfccceqoki: ${{ steps.run.outputs.xbfccceqoki }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xqk3zxlbwff
           xmhwxy6kdom: xbfccceqoki
           x243ajruq55: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xr56cejjsza: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xtneilza4va:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xgwrpjedh4f
@@ -1752,39 +1541,34 @@ jobs:
     outputs:
       xrdmjmjosgg: ${{ steps.run.outputs.xrdmjmjosgg }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xjmhgp2mozf
           xmhwxy6kdom: xrdmjmjosgg
           x5simbl4xh7: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xeba26crj65: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   xsp5o2v7s2g:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xtneilza4va
@@ -1792,71 +1576,63 @@ jobs:
     outputs:
       xvczuerazpe: ${{ steps.run.outputs.xvczuerazpe }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xx6ki6v4mbz
           xmhwxy6kdom: xvczuerazpe
           xidcbxkoukn: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
           xncpulym6zt: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
   x2acluywvm7:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
-    permissions:
-      contents: read
-      id-token: write
+    permissions: *xesdndyquma
     needs:
       - xesdndyquma
       - xsp5o2v7s2g
     if: ${{ success() && needs.xsp5o2v7s2g.outputs.xvczuerazpe == 'xvczuerazpe' && needs.xesdndyquma.result == 'success' }}
     steps:
-      - id: setup
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          persist-credentials: false
+      - *xqnnnql23op
       - id: run
         env:
-          xqpa6an33o5: ${{ secrets.xrecw4v2j5j }}
-          xxqh4k2ksyf: ${{ secrets.xaqnb4spokw }}
-          x636j2ebzmk: ${{ secrets.xkz7gzyz75s }}
+          xqpa6an33o5: *x6jrxhzmb4k
+          xxqh4k2ksyf: *xryj3o3djsx
+          x636j2ebzmk: *xs4hspd4kbz
           xqtabayyswc: xi3a2zajzvg
           xmhwxy6kdom: ''
           xi7u7cjoebg: ${{ needs.xesdndyquma.outputs.xavhmuioz7n }}
           xlrlbk5fhq4: ${{ needs.xesdndyquma.outputs.xfyi6ok6ok5 }}
-          xrjarggz6b7: ${{ secrets.xkxmguw6k42 }}
-          xyaqnp3pwdm: ${{ secrets.xfvt4ipssxd }}
-          x7g65bwwdgw: ${{ secrets.x2tog4huplt }}
-          x7cudfzz57c: ${{ secrets.xquqiaiupja }}
-          xeejwaz7qsa: ${{ secrets.xzeifyyht7x }}
-          xwloozxbaoy: ${{ secrets.xbucws5r6z7 }}
-          x5qojdo4snv: ${{ secrets.xhzquij5vjz }}
-          xjqwcbd5jig: ${{ secrets.x62mffq6fec }}
-          x67pastxirf: ${{ secrets.xhnuatecbvz }}
-          xb4wnxdpabo: ${{ secrets.xwfcb4ka6lh }}
-          xvirq6aphoa: ${{ secrets.xoy57aezg45 }}
-          xluwde5yprj: ${{ secrets.x4jbxml3eos }}
-          xckvkkemwcp: ${{ secrets.xt6j7evlv6j }}
-        run: ./.github/bin/xggk4ubpyn4
+          xrjarggz6b7: *xjrxxjdt6gv
+          xyaqnp3pwdm: *xk5jcghl3o4
+          x7g65bwwdgw: *x2vq4s2yas3
+          x7cudfzz57c: *xw4msalzvwz
+          xeejwaz7qsa: *xwia2jmtp6o
+          xwloozxbaoy: *x3xa2vj3psg
+          x5qojdo4snv: *xy6fnykkmst
+          xjqwcbd5jig: *xv6wban2hnn
+          x67pastxirf: *xfxe6oorw6t
+          xb4wnxdpabo: *xzvgdrzhngz
+          xvirq6aphoa: *xmbcbvfqjv5
+          xluwde5yprj: *x2othynp5ex
+          xckvkkemwcp: *xjimj5ffjtd
+        run: *xexaee6lcto
 concurrency:
   group: xggk4ubpyn4
   cancel-in-progress: false
