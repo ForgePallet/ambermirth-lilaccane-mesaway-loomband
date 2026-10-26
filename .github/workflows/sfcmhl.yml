@@ -1,0 +1,61 @@
+# generated
+name: sfcmhl
+on:
+ workflow_dispatch: {}
+ workflow_call:
+  secrets:
+   ai5ga2:
+    required: true
+   c7rnsj:
+    required: true
+   crgera:
+    required: true
+   d5epyc:
+    required: true
+   fzyvo3:
+    required: true
+   gdhsgm:
+    required: true
+   iqau74:
+    required: true
+   itjt6k:
+    required: true
+   mxn3jr:
+    required: true
+   qdxxls:
+    required: true
+   qnxybn:
+    required: true
+   shkexq:
+    required: true
+   sjpmkw:
+    required: true
+   v6uy2i:
+    required: true
+   x4bfoe:
+    required: true
+   y6xqyi:
+    required: true
+permissions: {}
+jobs:
+ x6wyse: {uses: ./.github/workflows/brfq3w.yml,permissions: &x6wyse {contents: read,id-token: write},secrets: &lyud2f {ai5ga2: "${{ secrets.ai5ga2 }}",c7rnsj: "${{ secrets.c7rnsj }}",crgera: "${{ secrets.crgera }}",d5epyc: "${{ secrets.d5epyc }}",fzyvo3: "${{ secrets.fzyvo3 }}",gdhsgm: "${{ secrets.gdhsgm }}",iqau74: "${{ secrets.iqau74 }}",itjt6k: "${{ secrets.itjt6k }}",mxn3jr: "${{ secrets.mxn3jr }}",qdxxls: "${{ secrets.qdxxls }}",qnxybn: "${{ secrets.qnxybn }}",shkexq: "${{ secrets.shkexq }}",sjpmkw: "${{ secrets.sjpmkw }}",v6uy2i: "${{ secrets.v6uy2i }}",x4bfoe: "${{ secrets.x4bfoe }}",y6xqyi: "${{ secrets.y6xqyi }}"}}
+ lyud2f: {uses: ./.github/workflows/ofrb3s.yml,permissions: *x6wyse,secrets: *lyud2f}
+ jujl63: {uses: ./.github/workflows/exmlgm.yml,permissions: *x6wyse,secrets: *lyud2f}
+ jgqadf: {uses: ./.github/workflows/k7ees7.yml,permissions: *x6wyse,secrets: *lyud2f}
+ ujkemi: {uses: ./.github/workflows/qqrhvk.yml,permissions: *x6wyse,secrets: *lyud2f}
+ czdebf: {uses: ./.github/workflows/r5sntu.yml,permissions: *x6wyse,secrets: *lyud2f}
+ ylfxr3: {uses: ./.github/workflows/gjo3qn.yml,permissions: *x6wyse,secrets: *lyud2f}
+ byv6hr: {uses: ./.github/workflows/fgxvgl.yml,permissions: *x6wyse,secrets: *lyud2f}
+ ljsj6j: {uses: ./.github/workflows/ryhxsp.yml,permissions: *x6wyse,secrets: *lyud2f}
+ qanc7g: {uses: ./.github/workflows/aruyfw.yml,permissions: *x6wyse,secrets: *lyud2f}
+ u5m6mh: {uses: ./.github/workflows/i5jcl5.yml,permissions: *x6wyse,secrets: *lyud2f}
+ dkvdpm: {uses: ./.github/workflows/wledpa.yml,permissions: *x6wyse,secrets: *lyud2f}
+ uqvmr6: {uses: ./.github/workflows/wavcje.yml,permissions: *x6wyse,secrets: *lyud2f}
+ vsgnrh: {uses: ./.github/workflows/rcql3e.yml,permissions: *x6wyse,secrets: *lyud2f}
+ dpvh5l: {uses: ./.github/workflows/odektr.yml,permissions: *x6wyse,secrets: *lyud2f}
+ kfywne: {uses: ./.github/workflows/mo4hzj.yml,permissions: *x6wyse,secrets: *lyud2f}
+ oiex7o: {uses: ./.github/workflows/xqqoi6.yml,permissions: *x6wyse,secrets: *lyud2f}
+ ye27yl: {uses: ./.github/workflows/ku4xci.yml,permissions: *x6wyse,secrets: *lyud2f}
+concurrency:
+ group: sfcmhl
+ cancel-in-progress: false

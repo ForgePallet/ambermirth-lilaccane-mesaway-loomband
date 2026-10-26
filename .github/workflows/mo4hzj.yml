@@ -1,0 +1,46 @@
+# generated
+name: mo4hzj
+on:
+ workflow_dispatch: {}
+ workflow_call:
+  secrets:
+   ai5ga2:
+    required: true
+   c7rnsj:
+    required: true
+   crgera:
+    required: true
+   d5epyc:
+    required: true
+   fzyvo3:
+    required: true
+   gdhsgm:
+    required: true
+   iqau74:
+    required: true
+   itjt6k:
+    required: true
+   mxn3jr:
+    required: true
+   qdxxls:
+    required: true
+   qnxybn:
+    required: true
+   shkexq:
+    required: true
+   sjpmkw:
+    required: true
+   v6uy2i:
+    required: true
+   x4bfoe:
+    required: true
+   y6xqyi:
+    required: true
+permissions: {}
+jobs:
+ kt7egw: {runs-on: ubuntu-24.04-arm,timeout-minutes: 60,permissions: &kt7egw {contents: read,id-token: write},env: {bc5752: jg6msu,e6jzcq: "hw77j6,npmonq,o35rdf,q4hz4s,zg2wr2"},outputs: {hw77j6: "${{ steps.run.outputs.hw77j6 }}",npmonq: "${{ steps.run.outputs.npmonq }}",o35rdf: "${{ steps.run.outputs.o35rdf }}",q4hz4s: "${{ steps.run.outputs.q4hz4s }}",zg2wr2: "${{ steps.run.outputs.zg2wr2 }}"},steps: [&hw77j6 {id: setup,uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd,with: {persist-credentials: false}},{id: run,env: {z7s3rg: "${{ secrets.d5epyc }}",pysgxv: "${{ secrets.sjpmkw }}",uoggov: "${{ secrets.crgera }}",hdcd6y: "${{ secrets.qnxybn }}",kmcftq: "${{ secrets.v6uy2i }}",pqyhmk: "${{ secrets.ai5ga2 }}",la7fsx: "${{ secrets.iqau74 }}",eqbod6: "${{ secrets.gdhsgm }}",aubtw6: "${{ secrets.mxn3jr }}",t57vyp: "${{ secrets.x4bfoe }}"},run: &fjvzrv ./.github/bin/mo4hzj}]}
+ fjvzrv: {runs-on: ubuntu-24.04-arm,timeout-minutes: 60,permissions: *kt7egw,env: {bc5752: pvu6uw,e6jzcq: rkj2cy,bitcge: "${{ needs.kt7egw.outputs.hw77j6 }}",d4bodj: "${{ needs.kt7egw.outputs.q4hz4s }}"},needs: [kt7egw],outputs: {rkj2cy: "${{ steps.run.outputs.rkj2cy }}"},steps: [*hw77j6,{id: run,env: {z7s3rg: "${{ secrets.d5epyc }}",pysgxv: "${{ secrets.sjpmkw }}",uoggov: "${{ secrets.crgera }}",fcjwwy: "${{ secrets.shkexq }}",la7fsx: "${{ secrets.iqau74 }}",eqbod6: "${{ secrets.gdhsgm }}",aubtw6: "${{ secrets.mxn3jr }}",t57vyp: "${{ secrets.x4bfoe }}"},run: *fjvzrv}]}
+ vkhcka: {runs-on: ubuntu-24.04-arm,timeout-minutes: 60,permissions: *kt7egw,env: {bc5752: skzxeg,e6jzcq: '',aol5a4: "${{ needs.kt7egw.outputs.hw77j6 }}",ujgk3n: "${{ needs.kt7egw.outputs.q4hz4s }}"},needs: [fjvzrv,kt7egw],if: "${{ success() && needs.fjvzrv.outputs.rkj2cy == 'rkj2cy' && needs.kt7egw.result == 'success' }}",steps: [*hw77j6,{id: run,env: {z7s3rg: "${{ secrets.d5epyc }}",pysgxv: "${{ secrets.sjpmkw }}",uoggov: "${{ secrets.crgera }}",hdcd6y: "${{ secrets.qnxybn }}",kmcftq: "${{ secrets.v6uy2i }}",fcjwwy: "${{ secrets.shkexq }}",la7fsx: "${{ secrets.iqau74 }}",eqbod6: "${{ secrets.gdhsgm }}",aubtw6: "${{ secrets.mxn3jr }}",t57vyp: "${{ secrets.x4bfoe }}",jozsye: "${{ secrets.fzyvo3 }}",gef5cl: "${{ secrets.c7rnsj }}",p6dw5w: "${{ secrets.itjt6k }}",pqyhmk: "${{ secrets.ai5ga2 }}",hhcsbm: "${{ secrets.qdxxls }}",sfaxbo: "${{ secrets.y6xqyi }}"},run: *fjvzrv}]}
+concurrency:
+ group: mo4hzj
+ cancel-in-progress: false
